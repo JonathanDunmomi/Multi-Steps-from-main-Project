@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background-color: aliceblue;
+}
+
+.container{
+   display: flex;
+   height: 80vh;
+   width: 50%;
+   background-color: #fff;
+   position: relative;
+   align-items: center;
+   margin-left: 300px;
+   margin-top: 50px;
+   margin-bottom: 50px;
+   border-radius: 10px;
+}
+
+.steps{
+    background-image: url(image/bg-sidebar-desktop.svg);
+    border-radius: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 70vh;
+    width: 30%;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.steps ul{
+    list-style: none;
+    counter-reset: my-counter;
+}
+
+.steps ul li{
+ counter-increment: my-counter;
+}
+
+.steps ul li::before{
+    content: counter(my-counter)".";
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-right: 10px;
+}
+
+.steps ul li:first-child::before{
+    background-color: cyan;
+    color: black;
+}
+
+.steps li{
+   margin: 20px 50px;
+}
+
+.steps li h2{
+    color: rgb(75, 73, 73);
+    font-size: 10px;
+}
+
+.steps li p{
+    color: #fff;
+    font-size: 10px;
+}
+
+.thank{
+    display: block;
+    margin-left: 50px;
+}
+
+.thank img{
+    width: 50px;
+    margin-left: 100px;
+}
+
+.thank h1{
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
+
+.thank p{
+    font-size: 12px;
+}
+
+@media (max-width: 700px) {
+    .container {
+        flex-direction: column;
+      width: 90%;
+      height: 70vh;
+      margin: 20px auto;
+    }
+    
+    .steps {
+        position: relative;
+        background-image: url(image/bg-sidebar-mobile.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    
+    .steps ul{
+      display: flex;
+    }
+}

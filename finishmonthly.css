@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+   height: 80vh;
+   width: 50%;
+   background-color: #fff;
+   position: relative;
+   margin-top: 50px;
+   margin-bottom: 50px;
+   border-radius: 10px;
+}
+
+.steps {
+  background-image: url(image/bg-sidebar-desktop.svg);
+    border-radius: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 75vh;
+    width: 30%;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.steps ul {
+  list-style: none;
+  counter-reset: my-counter;
+}
+
+.steps ul li {
+  counter-increment: my-counter;
+}
+
+.steps ul li::before {
+  content: counter(my-counter) ".";
+  font-weight: bold;
+  color: #fff;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-right: 10px;
+}
+
+.steps ul li:nth-child(4)::before {
+  background-color: cyan;
+  color: black;
+}
+
+.steps li {
+  margin: 20px;
+}
+
+.steps li h2, .steps li p {
+  font-size: 12px;
+}
+
+.finish {
+  margin: 30px;
+}
+
+.finish p {
+  font-size: 13px;
+  color: grey;
+  margin-bottom: 20px;
+}
+
+.arc {
+  background: rgb(251, 248, 248);
+  border-radius: 20px;
+}
+
+.arc1 {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+
+.arc1 h2 {
+  font-size: 15px;
+}
+.arc1 h4 {
+  font-size: 13px;
+  color: grey;
+}
+
+hr {
+  margin: 20px;
+  color: grey;
+}
+
+.arc2 {
+  margin-top: 10px;
+}
+
+.arc2 h2 {
+  font-size: 15px;
+  color: grey;
+}
+
+.arc2 p {
+  color: black;
+}
+
+.arc21, .arc22 {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.arc3 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.arc3 h2 {
+  font-size: 10px;
+  color: grey;
+}
+
+.arc3 p {
+  color: blue;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  transition: .4s;
+  border-radius: 25px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: blue;
+}
+
+input:checked + .slider:before {
+  transform: translateX(25px);
+}
+
+button {
+  margin-top: 20px;
+  background-color: blue;
+  color: #fff;
+  padding: 10px;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: grey;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .steps {
+    position: relative;
+    background-image: url(image/bg-sidebar-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .steps ul {
+      display: flex;
+      justify-content: center;
+  }
+
+  .finish{
+    margin: 10px;
+  }
+
+  .finish p {
+      font-size: 12px;
+  }
+
+  .arc1, .arc2, .arc3 {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .arc21, .arc22 {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  button {
+      margin-left: 0;
+  }
+}
